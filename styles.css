@@ -1,0 +1,73 @@
+html, body{
+    width: 100%;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: rgb(236, 179, 72);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+h1{
+    font-family: 'Bungee Shade', cursive;
+    font-size: 65px;
+    color: gray;
+    margin: 5px;
+}
+
+.botones-para-modificar-imagen{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.botones-header{
+    margin: 10px;
+    background-color: rgb(236, 179, 72);
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: wheat;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 2px 17px 3px rgba(61,54,61,1);
+    -moz-box-shadow: 2px 2px 17px 3px rgba(61,54,61,1);
+    box-shadow: 2px 2px 17px 3px rgba(61,54,61,1);
+}
+
+.editor-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(fondo.png);
+}
+
+.imagen-container{
+    width: 1000px;
+    height: 100%;
+    background-color: violet;
+    background-image: url(fondo.png);
+
+}
+
+p{
+    font-family: 'Patua One', cursive;
+    font-size: 35px;
+    background-color: palevioletred;
+    border-radius: 10px;
+}
+
+.imagen-de-meme{
+    background-color: black;
+    width: 100%;
+    height: 600px;
+}
