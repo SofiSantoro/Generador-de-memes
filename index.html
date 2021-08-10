@@ -20,16 +20,17 @@
 <header>
     <h1>Generador de memes</h1>
     <div class="botones-para-modificar-imagen">
-        <button class="botones-header">
+        <button class="botones-header" id="botonImagen">
             <i class="fas fa-file-image"></i>
             Imágen
         </button>
-        <button class="botones-header">
+        <button class="botones-header" id="botonTexto">
             <i class="fas fa-font"></i>
             Texto
         </button>
-        <button class="botones-header">
-            <i class="far fa-lightbulb"></i>            Modo oscuro
+        <button class="botones-header" id="botonModoOscuro">
+            <i class="far fa-lightbulb"></i>            
+            Modo oscuro
         </button>
     </div>
 </header>
@@ -44,7 +45,78 @@
             <P>BOTTOM TEXT</P>
         </div>
     </div>
+    
 </main>
+
+<aside class="barra-lateral-imagen" id="panelImagen">
+    <button class="boton-de-panel-lateral" id="botonMostrarOcultar">
+        <i class="fas fa-times"></i>
+    </button>
+    <div class="barra-de-imagen">
+        <h2>IMAGEN</h2>
+        <div class="seccion-url">
+            <h3>URL</h3>
+            <input type="text" class="input-de-panel-lateral">
+        </div>
+        <div class="seccion-fondo">
+            <h3>FONDO</h3>
+            <div class="opciones-seccion-fondo">
+                <input type="color"class="panel-de-control-fondo" id="blend-de-color" value="#FFFFFF">
+                <select class="panel-de-control-fondo editor-select-barra-lateral">
+                    <option value="unset">Ninguno</option>
+                    <option value="aclarar">Aclarar</option>
+                    <option value="oscurecer">Oscurecer</option>
+                    <option value="diferencia">Diferencia</option>
+                    <option value="luminosidad">Luminosidad</option>
+                    <option value="multiplicar">Multiplicar</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="seccion=filtros">
+            <h3>FILTROS</h3>
+            <div class="slider-panel-lateral">
+                <label for="slider-brillo">BRILLO</label>
+                <input type="range" id="slider-brillo" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-opacidad">OPACIDAD</label>
+                <input type="range" id="slider-opacidad" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-contraste">CONTRASTE</label>
+                <input type="range" id="slider-contraste" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-desenfoque">DESENFOQUE</label>
+                <input type="range" id="slider-desenfoque" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-escala-de-grises">ESCALA DE GRISES</label>
+                <input type="range" id="slider-escala-de-grises" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-sepia">SEPIA</label>
+                <input type="range" id="slider-sepia" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-hue">HUE</label>
+                <input type="range" id="slider-hue" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-saturado">SATURADO</label>
+                <input type="range" id="slider-saturado" min="0" max="1" step="0.1">
+            </div>
+            <div class="slider-panel-lateral">
+                <label for="slider-negativo">NEGATIVO</label>
+                <input type="range" id="slider-negativo" min="0" max="1" step="0.1">
+            </div>
+        </div>
+    </div>
+    <button class="boton-reestablecer-datos">
+        REESTABLECER FILTROS
+    </button>
+</aside>
 
 
 
