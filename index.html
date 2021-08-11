@@ -17,7 +17,7 @@
 </head>
 <body>
     
-<header>
+<header id="header">
     <h1>Generador de memes</h1>
     <div class="botones-para-modificar-imagen">
         <button class="botones-header" id="botonImagen">
@@ -29,8 +29,12 @@
             Texto
         </button>
         <button class="botones-header" id="botonModoOscuro">
-            <i class="far fa-lightbulb"></i>            
+            <i class="fas fa-lightbulb"></i>
             Modo oscuro
+        </button>
+        <button class="botones-header boton-claro" id="botonModoClaro">
+            <i class="far fa-lightbulb"></i>            
+            Modo claro
         </button>
     </div>
 </header>
@@ -39,7 +43,7 @@
     <div class="editor-container">
         <div class="imagen-container">
             <p>TOP TEXT</p>
-            <div class="imagen-de-meme">
+            <div class="imagen-de-meme" id="imagenDeMeme">
 
             </div>
             <P>BOTTOM TEXT</P>
@@ -56,7 +60,7 @@
         <h2>IMAGEN</h2>
         <div class="seccion-url">
             <h3>URL</h3>
-            <input type="text" class="input-de-panel-lateral">
+            <input type="text" class="input-de-panel-lateral" id="inputImagen">
         </div>
         <div class="seccion-fondo">
             <h3>FONDO</h3>
@@ -113,12 +117,26 @@
             </div>
         </div>
     </div>
-    <button class="boton-reestablecer-datos">
-        REESTABLECER FILTROS
-    </button>
+    <div class="contenedor-boton-reestablecer">
+        <button class="boton-reestablecer-datos">
+            REESTABLECER FILTROS
+        </button>
+    </div>
 </aside>
 
 
+<aside class="panel-de-texto" id="panelTexto">
+
+</aside>
+<button class="boton-de-panel-lateral" id="botonMostrarOcultar">
+    <i class="fas fa-times"></i>
+</button>
+
+<div class="barra-de-texto">
+    <div class="seccion-superior">
+        <h3>SUPERIOR</h3>
+        <textarea name="superior" placeholder="TOP TEXT" class="input-de-panel-lateral" id="inputTextoSuperior"></textarea>
+    </div>
 
 
 
