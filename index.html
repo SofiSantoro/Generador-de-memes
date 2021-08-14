@@ -17,127 +17,196 @@
 </head>
 <body>
     
-<header id="header">
-    <h1>Generador de memes</h1>
-    <div class="botones-para-modificar-imagen">
-        <button class="botones-header" id="botonImagen">
-            <i class="fas fa-file-image"></i>
-            Imágen
-        </button>
-        <button class="botones-header" id="botonTexto">
-            <i class="fas fa-font"></i>
-            Texto
-        </button>
-        <button class="botones-header" id="botonModoOscuro">
-            <i class="fas fa-lightbulb"></i>
-            Modo oscuro
-        </button>
-        <button class="botones-header boton-claro" id="botonModoClaro">
-            <i class="far fa-lightbulb"></i>            
-            Modo claro
-        </button>
-    </div>
-</header>
+    <header id="header">
+        <h1>Generador de memes</h1>
+        <div class="botones-para-modificar-imagen">
+            <button class="botones-header" id="botonImagen">
+                <i class="fas fa-file-image"></i>
+                Imágen
+            </button>
+            <button class="botones-header" id="botonTexto">
+                <i class="fas fa-font"></i>
+                Texto
+            </button>
+            <button class="botones-header" id="botonModoOscuro">
+                <i class="fas fa-lightbulb"></i>
+                Modo oscuro
+            </button>
+            <button class="botones-header boton-claro" id="botonModoClaro">
+                <i class="far fa-lightbulb"></i>            
+                Modo claro
+            </button>
+        </div>
+    </header>
 
-<main>
-    <div class="editor-container">
-        <div class="imagen-container">
-            <p>TOP TEXT</p>
-            <div class="imagen-de-meme" id="imagenDeMeme">
-
+    <main>
+        <div class="editor-container">
+            <div class="imagen-container">
+                <p id="respuesta-input-superior">TOP TEXT</p>
+                <img src="" class="imagen-de-meme" id="imagenDeMeme"/>
+                
+                <p id="respuesta-input-inferior">BOTTOM TEXT</p>
             </div>
-            <P>BOTTOM TEXT</P>
         </div>
-    </div>
-    
-</main>
+        
+    </main>
 
-<aside class="barra-lateral-imagen" id="panelImagen">
-    <button class="boton-de-panel-lateral" id="botonMostrarOcultar">
-        <i class="fas fa-times"></i>
-    </button>
-    <div class="barra-de-imagen">
-        <h2>IMAGEN</h2>
-        <div class="seccion-url">
-            <h3>URL</h3>
-            <input type="text" class="input-de-panel-lateral" id="inputImagen">
+    <aside class="barra-lateral-imagen" id="panelImagen">
+        <button class="boton-de-panel-lateral" id="botonMostrarOcultar">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="barra-de-imagen">
+            <h2>IMAGEN</h2>
+            <div class="seccion-url">
+                <h3>URL</h3>
+                <input type="text" value="imagenURL" class="input-de-panel-lateral" id="inputImagen"/>
+            </div>
+            <div class="seccion-fondo">
+                <h3>FONDO</h3>
+                <div class="opciones-seccion-fondo">
+                    <input type="color"class="panel-de-control-fondo" id="blend-de-color" value="#FFFFFF"/>
+                    <select class="panel-de-control-fondo editor-select-barra-lateral">
+                        <option value="unset">Ninguno</option>
+                        <option value="aclarar">Aclarar</option>
+                        <option value="oscurecer">Oscurecer</option>
+                        <option value="diferencia">Diferencia</option>
+                        <option value="luminosidad">Luminosidad</option>
+                        <option value="multiplicar">Multiplicar</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="seccion-filtros">
+                <h3>FILTROS</h3>
+                <div class="slider-panel-lateral">
+                    <label for="slider-brillo">BRILLO</label>
+                    <input type="range" id="slider-brillo" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-opacidad">OPACIDAD</label>
+                    <input type="range" id="slider-opacidad" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-contraste">CONTRASTE</label>
+                    <input type="range" id="slider-contraste" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-desenfoque">DESENFOQUE</label>
+                    <input type="range" id="slider-desenfoque" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-escala-de-grises">ESCALA DE GRISES</label>
+                    <input type="range" id="slider-escala-de-grises" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-sepia">SEPIA</label>
+                    <input type="range" id="slider-sepia" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-hue">HUE</label>
+                    <input type="range" id="slider-hue" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-saturado">SATURADO</label>
+                    <input type="range" id="slider-saturado" min="0" max="1" step="0.1"/>
+                </div>
+                <div class="slider-panel-lateral">
+                    <label for="slider-negativo">NEGATIVO</label>
+                    <input type="range" id="slider-negativo" min="0" max="1" step="0.1"/>
+                </div>
+            </div>
         </div>
-        <div class="seccion-fondo">
-            <h3>FONDO</h3>
-            <div class="opciones-seccion-fondo">
-                <input type="color"class="panel-de-control-fondo" id="blend-de-color" value="#FFFFFF">
-                <select class="panel-de-control-fondo editor-select-barra-lateral">
-                    <option value="unset">Ninguno</option>
-                    <option value="aclarar">Aclarar</option>
-                    <option value="oscurecer">Oscurecer</option>
-                    <option value="diferencia">Diferencia</option>
-                    <option value="luminosidad">Luminosidad</option>
-                    <option value="multiplicar">Multiplicar</option>
+        <div class="contenedor-boton-reestablecer">
+            <button class="boton-reestablecer-datos">
+                REESTABLECER FILTROS
+            </button>
+        </div>
+    </aside>
 
+
+    <aside class="barra-de-texto" id="panelTexto">
+
+        <button class="boton-de-panel-lateral" id="botonMostrarOcultar">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="opciones-barra-de-texto">
+            <div class="seccion-superior">
+                <h3>SUPERIOR</h3>
+                <textarea name="superior" placeholder="TOP TEXT" class="input-de-panel-lateral" id="inputTextoSuperior"></textarea>
+                <input type="checkbox" name="confirmar-texto-superior" value="sin-texto"/> Sin texto superior
+            </div>
+
+            <div class="seccion-inferior">
+                <h3>INFERIOR</h3>
+                <textarea name="inferior" placeholder="BOTTOM TEXT" class="input-de-panel-lateral" id="inputTextoIferior"></textarea>
+                <input type="checkbox" name="confirmar-texto-inferior" value="sin-texto"/> Sin texto inferior
+            </div>
+
+            <div class="fuente">
+                <select>
+                    <option value="arial-font">Arial</option>
+                    <option value="arial-black-font">Arial black</option>
+                    <option value="american-type-font">American typewriter</option>
+                    <option value="andale-font">Andale mono</option>
+                    <option value="comic-sans-font">Comic sans</option>
+                    <option value="helvetica-font">Helvetica</option>
+                    <option value="verdana-font">Verdana</option>
+                </select>
+
+                <input type="number" name="tamaño-de-fuente" min="10" max="40"/>
+
+                <div class="alineacion">
+                    <button class="boton-de-alineacion" id="botonAlineacionIzq">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="boton-de-alineacion" id="botonAlineacionCentro">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button class="boton-de-alineacion" id="botonAlineacionCentro">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="color-fondo">
+                <h3>COLOR</h3>
+                <input type="color"class="panel-de-control-fondo" id="blend-de-color" value="#FFFFFF"/>
+                    
+                <h3>FONDO</h3>
+
+                <input type="color"class="panel-de-control-fondo" id="blend-de-color" value="#FFFFFF"/>
+                
+                <input type="checkbox" name="confirmar-fondo-transparente" value="fondo-transparente"/> Fondo transparente
+            </div>
+
+            <div class="contorno">
+                <h3>CONTORNO</h3>
+                <div class="botones-de-contorno">
+                    <button>Ninguno</button>
+                    <button>Claro</button>
+                    <button>Oscuro</button>
+                </div>
+            </div>
+
+            <div class="espaciado">
+                <h3>ESPACIADO</h3>
+                <input type="number" name="tamaño-de-fuente" min="10" max="40"/>
+            </div>
+
+            <div class="interlineado">
+                <h3>INTERLINEADO</h3>
+                <select id="interlineadoDeTexto">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
                 </select>
             </div>
         </div>
-        <div class="seccion=filtros">
-            <h3>FILTROS</h3>
-            <div class="slider-panel-lateral">
-                <label for="slider-brillo">BRILLO</label>
-                <input type="range" id="slider-brillo" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-opacidad">OPACIDAD</label>
-                <input type="range" id="slider-opacidad" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-contraste">CONTRASTE</label>
-                <input type="range" id="slider-contraste" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-desenfoque">DESENFOQUE</label>
-                <input type="range" id="slider-desenfoque" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-escala-de-grises">ESCALA DE GRISES</label>
-                <input type="range" id="slider-escala-de-grises" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-sepia">SEPIA</label>
-                <input type="range" id="slider-sepia" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-hue">HUE</label>
-                <input type="range" id="slider-hue" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-saturado">SATURADO</label>
-                <input type="range" id="slider-saturado" min="0" max="1" step="0.1">
-            </div>
-            <div class="slider-panel-lateral">
-                <label for="slider-negativo">NEGATIVO</label>
-                <input type="range" id="slider-negativo" min="0" max="1" step="0.1">
-            </div>
-        </div>
-    </div>
-    <div class="contenedor-boton-reestablecer">
-        <button class="boton-reestablecer-datos">
-            REESTABLECER FILTROS
-        </button>
-    </div>
-</aside>
-
-
-<aside class="panel-de-texto" id="panelTexto">
-
-</aside>
-<button class="boton-de-panel-lateral" id="botonMostrarOcultar">
-    <i class="fas fa-times"></i>
-</button>
-
-<div class="barra-de-texto">
-    <div class="seccion-superior">
-        <h3>SUPERIOR</h3>
-        <textarea name="superior" placeholder="TOP TEXT" class="input-de-panel-lateral" id="inputTextoSuperior"></textarea>
-    </div>
-
+    </aside>
 
 
     <script src="index.js"></script>

@@ -4,15 +4,9 @@ html, body{
 
 body{
     margin: 0;
-    background-color: black;
+    height: 100vh;
 }
 
-.dark-theme{
-    header{
-        background-color: black;
-    }
-
-}
 
 header{
     background-color: rgb(236, 179, 72);
@@ -105,7 +99,6 @@ p{
     background-color: palevioletred;
     font-family: 'Patua One', cursive;
     display: none;
-
 }
 
 .barra-de-texto{
@@ -121,6 +114,7 @@ p{
     overflow: auto;
     background-color: palevioletred;
     font-family: 'Patua One', cursive;
+    display: none;
 }
 
 .boton-de-panel-lateral{
@@ -165,7 +159,7 @@ p{
 .boton-reestablecer-datos{
     padding: 10px;
     border-radius: 15px;
-    border: none;
+    border: solid 1px darkgrey;
     font-family: 'Patua One', cursive;
     font-size: 15px;
     background-color: gray;
