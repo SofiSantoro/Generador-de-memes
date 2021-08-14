@@ -19,6 +19,11 @@ const botonModoOscuro = document.getElementById("botonModoOscuro")
 const botonModoClaro = document.getElementById("botonModoClaro")
 const botonTexto = document.getElementById("botonTexto")
 
+const inputTextoSuperior = document.getElementById("inputTextoSuperior")
+const resultadoInputSuperior = document.getElementById("respuesta-input-superior") //id del <p> top text
+const inputTextoInferior = document.getElementById("inputTextoIferior") 
+const resultadoInputInferior = document.getElementById("respuesta-input-inferior") //id del <p> bottom text
+
 
 //PANELES//
 
@@ -51,13 +56,9 @@ botonDeAperturaBarraTexto.onclick = mostrarPanelTexto
 
 //IMAGEN DE MEME//
 
-const imagenURL = document.querySelector("img")
-
-const imagenAplicada = () => {
-    const guardarImagen = img.value
-    imagenURL.src = "img.value"
- }
-inputImagen.oninput = imagenAplicada
+inputImagen.oninput = () => {
+    mostrarImagenMeme.src = inputImagen.value
+}
 
 
 
@@ -90,15 +91,17 @@ const modoClaro = () => {
 }
 botonModoClaro.onclick = modoClaro
 
-//TOP TEXT
+//TOP-BOTTOM TEXT
 
-const inputTextoSuperior = document.getElementById("inputTextoSuperior")
-const resultadoInputSuperior = document.getElementById("respuesta-input-superior")
-const inputTextoInferior = document.getElementById("inputTextoIferior")
-const resultadoInputInferior = document.getElementById("respuesta-input-inferior")
+
+const cambiarColorTexto = document.getElementById("blend-de-color")
 
 inputTextoSuperior.oninput = () => {
     resultadoInputSuperior.textContent = inputTextoSuperior.value
+}
+
+cambiarColorTexto.oninput = () => {
+    resultadoInputSuperior.style.color = cambiarColorTexto.value
 }
 
 inputTextoInferior.oninput = () => {
