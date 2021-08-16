@@ -14,7 +14,6 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
 }
 
 h1{
@@ -55,19 +54,26 @@ h1{
     display: none;
 }
 
+main{
+    height: 100vh;
+}
 .editor-container{
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     background-image: url(fondo.png);
 }
 
 .imagen-container{
     width: 1000px;
-    height: 100%;
     background-color: violet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-image: url(fondo.png);
 
 }
@@ -77,6 +83,7 @@ p{
     font-size: 35px;
     background-color: palevioletred;
     border-radius: 10px;
+    width: 100%;
 }
 
 .imagen-de-meme{

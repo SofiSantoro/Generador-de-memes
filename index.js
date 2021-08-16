@@ -10,7 +10,7 @@ const botonDeAperturaBarraTexto = document.getElementById("botonTexto")   //id d
 const botonDeCierreImagen = document.getElementById("botonMostrarOcultar") //id del boton cerrar panel
 
 
-const mostrarImagenMeme = document.getElementById("imagenDeMeme") //id de div negro
+const mostrarImagenMeme = document.getElementById("imagenDeMeme") //id de la imagen que se ingresa
 
 const inputImagen = document.getElementById("inputImagen")
 
@@ -107,3 +107,32 @@ cambiarColorTexto.oninput = () => {
 inputTextoInferior.oninput = () => {
     resultadoInputInferior.textContent = inputTextoInferior.value
 }
+
+//FILTROS
+
+const actualizarBrillo = document.getElementById("sliderbrillo")
+const actualizarOpacidad = document.getElementById("slider-opacidad")
+const actualizarContraste = document.getElementById("slider-contraste")
+const actualizarDesenfoque = document.getElementById("slider-desenfoque")
+const actualizarEscalaDeGrises = document.getElementById("slider-escala-de-grises")
+const actualizarSepia = document.getElementById("slider-sepia")
+const actualizarHue = document.getElementById("slider-hue")
+const actualizarSaturado = document.getElementById("slider-saturado")
+const actualizarNegativo = document.getElementById("slider-negativo")
+
+
+const actualizarFiltros = () => {
+
+  mostrarImagenMeme.style.filter = "brightness(" + actualizarBrillo.value + ")" ; "grayscale(" + actualizarEscalaDeGrises.value + ")" ; "opacity(" + actualizarOpacidad.value + ")" ; "contrast(" + actualizarContraste.value + ")" ; "blur(" + actualizarDesenfoque.value + ")" ; "grayscale(" + actualizarEscalaDeGrises.value + ")" ; "sepia(" + actualizarSepia.value + ")" ; "hue-rotate(" + actualizarHue.value + ")" ; "saturate(" + actualizarSaturado.value + ")" ; "invert(" + actualizarNegativo.value + ")"
+  
+}
+actualizarBrillo.addEventListener('change', actualizarFiltros);
+actualizarOpacidad.addEventListener('change', actualizarFiltros);
+actualizarContraste.addEventListener('change', actualizarFiltros);
+actualizarDesenfoque.addEventListener('change', actualizarFiltros);
+actualizarEscalaDeGrises.addEventListener('change', actualizarFiltros);
+actualizarSepia.addEventListener('change', actualizarFiltros);
+actualizarHue.addEventListener('change', actualizarFiltros);
+actualizarSaturado.addEventListener('change', actualizarFiltros);
+actualizarNegativo.addEventListener('change', actualizarFiltros);
+

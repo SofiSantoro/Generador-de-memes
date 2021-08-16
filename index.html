@@ -41,10 +41,11 @@
 
     <main>
         <div class="editor-container">
-            <div class="imagen-container">
+           <div class="imagen-container">
                 <p id="respuesta-input-superior">TOP TEXT</p>
+
                 <img src="" class="imagen-de-meme" id="imagenDeMeme"/>
-                
+
                 <p id="respuesta-input-inferior">BOTTOM TEXT</p>
             </div>
         </div>
@@ -59,13 +60,15 @@
             <h2>IMAGEN</h2>
             <div class="seccion-url">
                 <h3>URL</h3>
+                <label for="url">
                 <input type="text" value="imagenURL" class="input-de-panel-lateral" id="inputImagen"/>
+                </label>
             </div>
             <div class="seccion-fondo">
                 <h3>FONDO</h3>
                 <div class="opciones-seccion-fondo">
-                    <input type="color"class="panel-de-control-fondo" id="blend-de-color" value="#FFFFFF"/>
-                    <select class="panel-de-control-fondo editor-select-barra-lateral">
+                    <input type="color"class="panel-de-control-fondo" id="blend-de-color-img" value="#FFFFFF"/>
+                    <select class="panel-de-control-fondo editor-select-barra-lateral" id="selector-de-imagen">
                         <option value="unset">Ninguno</option>
                         <option value="aclarar">Aclarar</option>
                         <option value="oscurecer">Oscurecer</option>
@@ -80,15 +83,15 @@
                 <h3>FILTROS</h3>
                 <div class="slider-panel-lateral">
                     <label for="slider-brillo">BRILLO</label>
-                    <input type="range" id="slider-brillo" min="0" max="1" step="0.1"/>
+                    <input type="range" id="sliderbrillo" min="0" max="10" step="0.1"/>
                 </div>
                 <div class="slider-panel-lateral">
                     <label for="slider-opacidad">OPACIDAD</label>
-                    <input type="range" id="slider-opacidad" min="0" max="1" step="0.1"/>
+                    <input type="range" id="slider-opacidad" min="0" max="10" step="0.1"/>
                 </div>
                 <div class="slider-panel-lateral">
                     <label for="slider-contraste">CONTRASTE</label>
-                    <input type="range" id="slider-contraste" min="0" max="1" step="0.1"/>
+                    <input type="range" id="slider-contraste" min="0" max="10" step="0.1"/>
                 </div>
                 <div class="slider-panel-lateral">
                     <label for="slider-desenfoque">DESENFOQUE</label>
