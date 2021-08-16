@@ -21,7 +21,7 @@ const botonTexto = document.getElementById("botonTexto")
 
 const inputTextoSuperior = document.getElementById("inputTextoSuperior")
 const resultadoInputSuperior = document.getElementById("respuesta-input-superior") //id del <p> top text
-const inputTextoInferior = document.getElementById("inputTextoIferior") 
+const inputTextoInferior = document.getElementById("inputTextoIferior") //id del <textarea> del bottom text
 const resultadoInputInferior = document.getElementById("respuesta-input-inferior") //id del <p> bottom text
 
 
@@ -29,7 +29,7 @@ const resultadoInputInferior = document.getElementById("respuesta-input-inferior
 
 const ocultarPanel = () => {
     barraLateralImagen.style.display = "none"
-
+    barraLateralTexto.style.display = "none"
 }
 botonDeCierreImagen.onclick = ocultarPanel
 
@@ -102,6 +102,8 @@ inputTextoSuperior.oninput = () => {
 
 cambiarColorTexto.oninput = () => {
     resultadoInputSuperior.style.color = cambiarColorTexto.value
+    resultadoInputInferior.style.color = cambiarColorTexto.value
+
 }
 
 inputTextoInferior.oninput = () => {
@@ -120,6 +122,8 @@ const actualizarHue = document.getElementById("slider-hue")
 const actualizarSaturado = document.getElementById("slider-saturado")
 const actualizarNegativo = document.getElementById("slider-negativo")
 
+const botonReestablecerFiltros = document.getElementById("reestablecer-filtros")
+
 
 const actualizarFiltros = () => {
 
@@ -136,3 +140,17 @@ actualizarHue.addEventListener('change', actualizarFiltros);
 actualizarSaturado.addEventListener('change', actualizarFiltros);
 actualizarNegativo.addEventListener('change', actualizarFiltros);
 
+const reestablecerFiltrosOriginales = () => {
+    actualizarBrillo.value = 1
+    actualizarOpacidad.value = 1
+    actualizarDesenfoque.value = 0
+    actualizarContraste.value = 100
+    actualizarEscalaDeGrises.value = 0
+    actualizarHue.value = 0
+    actualizarSepia.value = 0
+    actualizarSaturado.value = 100
+    actualizarNegativo.value = 0
+
+    actualizarFiltros()
+}
+botonReestablecerFiltros.onclick = reestablecerFiltrosOriginales
