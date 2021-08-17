@@ -60,11 +60,27 @@ main{
 .editor-container{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
     background-image: url(fondo.png);
+}
+
+.boton-descargar{
+    font-size: 25px;
+    background-color: rgb(236, 179, 72);
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Patua One', cursive;
+    transition: background-color 0.2s;
+}
+.boton-descargar:active {
+    box-shadow: 0 1px 0 #00823F;
+    bottom:-4px;
+    background-color: thistle;
 }
 
 .imagen-container{
@@ -78,12 +94,17 @@ main{
 
 }
 
+.contenedor-texto-superior,
+.contenedor-texto-inferior{
+    width: 1000px;
+}
 p{
     font-family: 'Patua One', cursive;
     font-size: 35px;
     background-color: palevioletred;
     border-radius: 10px;
     width: 100%;
+    
 }
 
 .imagen-de-meme{
@@ -177,4 +198,8 @@ p{
     box-shadow: 0 1px 0 #00823F;
     bottom:-4px;
     background-color: thistle;
+}
+
+.oculto {
+    display: none;
 }

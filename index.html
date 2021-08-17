@@ -14,6 +14,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
 </head>
 <body>
     
@@ -42,12 +54,20 @@
     <main>
         <div class="editor-container">
            <div class="imagen-container">
-                <p id="respuesta-input-superior">TOP TEXT</p>
+               <div class="contenedor-texto-superior" id="contenedor-texto-superior">
+                    <p id="respuesta-input-superior">TOP TEXT</p>
+                </div>
 
                 <img src="" class="imagen-de-meme" id="imagenDeMeme"/>
 
-                <p id="respuesta-input-inferior">BOTTOM TEXT</p>
+                <div class="contenedor-texto-inferior" id="contenedor-texto-inferior">
+                    <p id="respuesta-input-inferior">BOTTOM TEXT</p>
+                </div>
             </div>
+
+            <button type="button" class="boton-descargar" id="descargar-meme">
+                <i class="fas fa-download button-icon-text"></i> Descargar meme
+            </button>
         </div>
         
     </main>
@@ -137,38 +157,39 @@
             <div class="seccion-superior">
                 <h3>SUPERIOR</h3>
                 <textarea name="superior" placeholder="TOP TEXT" class="input-de-panel-lateral" id="inputTextoSuperior"></textarea>
-                <input type="checkbox" name="confirmar-texto-superior" value="sin-texto"/> Sin texto superior
+                <input type="checkbox" name="confirmar-texto-superior" value="sin-texto" id="texto-superior-checked"/> Sin texto superior
             </div>
 
             <div class="seccion-inferior">
                 <h3>INFERIOR</h3>
                 <textarea name="inferior" placeholder="BOTTOM TEXT" class="input-de-panel-lateral" id="inputTextoIferior"></textarea>
-                <input type="checkbox" name="confirmar-texto-inferior" value="sin-texto"/> Sin texto inferior
+                <input type="checkbox" name="confirmar-texto-inferior" value="sin-texto" id="texto-inferior-ckecked"/> Sin texto inferior
             </div>
 
             <div class="fuente">
-                <select>
-                    <option value="arial-font">Arial</option>
-                    <option value="arial-black-font">Arial black</option>
-                    <option value="american-type-font">American typewriter</option>
-                    <option value="andale-font">Andale mono</option>
-                    <option value="comic-sans-font">Comic sans</option>
-                    <option value="helvetica-font">Helvetica</option>
-                    <option value="verdana-font">Verdana</option>
+                <select id="selector-de-fuente">
+                    <option value="Patua One" style="font-family: 'Patua One', cursive">Patua One</option>
+                    <option value="Arial" style="font-family: Arial, Helvetica, sans-serif">Arial</option>
+                    <option value="Arial Black" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Arial Black</option>
+                    <option value="Roboto" style="font-family: 'Roboto', sans-serif">Roboto</option>
+                    <option value="cursive" style="font-family: cursive">Cursive</option>
+                    <option value="Times New Roman" style="font-family: 'Times New Roman', Times, serif">Times New Roman</option>
+                    <option value="Permanent Marker" style="font-family: 'Permanent Marker', cursive">Permanent Marker</option>
+                    <option value="Verdana" style="font-family: Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
                 </select>
 
                 <label>
-                <input type="number" name="tamaño-de-fuente" min="10" max="40"/>
+                <input type="number" name="tamaño-de-fuente" min="10" max="40" id="tamanio-de-fuente"/>
                 </label>
 
                 <div class="alineacion">
-                    <button class="boton-de-alineacion" id="botonAlineacionIzq">
+                    <button class="boton-de-alineacion" id="boton-alineacion-izq">
                         <i class="fas fa-align-left"></i>
                     </button>
-                    <button class="boton-de-alineacion" id="botonAlineacionCentro">
+                    <button class="boton-de-alineacion" id="boton-alineacion-centro">
                         <i class="fas fa-align-center"></i>
                     </button>
-                    <button class="boton-de-alineacion" id="botonAlineacionCentro">
+                    <button class="boton-de-alineacion" id="boton-alineacion-derecha">
                         <i class="fas fa-align-right"></i>
                     </button>
                 </div>

@@ -24,6 +24,8 @@ const resultadoInputSuperior = document.getElementById("respuesta-input-superior
 const inputTextoInferior = document.getElementById("inputTextoIferior") //id del <textarea> del bottom text
 const resultadoInputInferior = document.getElementById("respuesta-input-inferior") //id del <p> bottom text
 
+const botonDescarga = document.getElementById("descargar-meme")
+
 
 //PANELES//
 
@@ -74,6 +76,8 @@ const modoOscuro = () => {
     botonModoClaro.style.display = "inline"
     botonModoClaro.style.background = "gray"
     botonModoOscuro.style.display = "none"
+    botonDescarga.style.background = "black"
+    botonDescarga.style.color = "white"
 }
 botonModoOscuro.onclick = modoOscuro
 
@@ -88,6 +92,8 @@ const modoClaro = () => {
     botonModoClaro.style.display = "none"
     botonModoOscuro.style.background = "rgb(236, 179, 72)"
     botonModoOscuro.style.display = "inline"
+    botonDescarga.style.background = "rgb(236, 179, 72)"
+    botonDescarga.style.color = "black"
 }
 botonModoClaro.onclick = modoClaro
 
@@ -154,3 +160,117 @@ const reestablecerFiltrosOriginales = () => {
     actualizarFiltros()
 }
 botonReestablecerFiltros.onclick = reestablecerFiltrosOriginales
+
+
+//ALINEACION DE TEXTO
+
+const botonAlineacionIzq = document.getElementById("boton-alineacion-izq")
+const botonAlineacionCentro = document.getElementById("boton-alineacion-centro")
+const botonAlineacionDer = document.getElementById("boton-alineacion-derecha")
+
+botonAlineacionIzq.onclick = () => {
+    resultadoInputSuperior.style.textAlign = "left" 
+    resultadoInputInferior.style.textAlign = "left" 
+}
+botonAlineacionCentro.onclick = () => {
+    resultadoInputSuperior.style.textAlign = "center" 
+    resultadoInputInferior.style.textAlign = "center" 
+}
+botonAlineacionDer.onclick = () => {
+    resultadoInputSuperior.style.textAlign = "right" 
+    resultadoInputInferior.style.textAlign = "right" 
+}
+
+//FUENTE
+
+const resultadoFuente = document.getElementById("selector-de-fuente")
+const resultadoTamanio = document.getElementById("tamanio-de-fuente")
+const cambiarFondoTexto = document.getElementById("blend-de-color-fondo")
+
+const actualizarFuente = (event) => {
+    if(event.target.value === "Arial"){
+        resultadoInputSuperior.style.fontFamily = "Arial" 
+        resultadoInputInferior.style.fontFamily = "Arial"  
+    }
+    else if(event.target.value === "Arial Black"){
+        resultadoInputSuperior.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" 
+        resultadoInputInferior.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" 
+    }
+    else if(event.target.value === "Roboto"){
+        resultadoInputSuperior.style.fontFamily = "'Roboto', sans-serif" 
+        resultadoInputInferior.style.fontFamily = "'Roboto', sans-serif" 
+    }
+    else if(event.target.value === "cursive"){
+        resultadoInputSuperior.style.fontFamily = "cursive" 
+        resultadoInputInferior.style.fontFamily = "cursive" 
+    }
+    else if(event.target.value === "Times New Roman"){
+        resultadoInputSuperior.style.fontFamily = "Georgia, 'Times New Roman', Times, serif" 
+        resultadoInputInferior.style.fontFamily = "Georgia, 'Times New Roman', Times, serif" 
+    }
+    else if(event.target.value === "Permanent Marker"){
+        resultadoInputSuperior.style.fontFamily = "'Permanent Marker', cursive" 
+        resultadoInputInferior.style.fontFamily = "'Permanent Marker', cursive" 
+    }
+    else if(event.target.value === "Verdana"){
+        resultadoInputSuperior.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif" 
+        resultadoInputInferior.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif" 
+    }
+    else if(event.target.value === "Patua One"){
+        resultadoInputSuperior.style.fontFamily = "font-family: 'Patua One', cursive" 
+        resultadoInputInferior.style.fontFamily = "font-family: 'Patua One', cursive" 
+    }
+  }
+resultadoFuente.addEventListener("change", actualizarFuente)
+
+//Alineacion de texto
+
+const actualizarTamanioTexto = () => {
+    const tamanio = resultadoTamanio.value
+  
+    resultadoInputSuperior.style.fontSize = `${tamanio}px`
+    resultadoInputInferior.style.fontSize = `${tamanio}px`
+}
+resultadoTamanio.oninput = actualizarTamanioTexto
+
+//Color fondo de texto
+
+cambiarFondoTexto.oninput = () => {
+    resultadoInputSuperior.style.background = cambiarFondoTexto.value
+    resultadoInputInferior.style.background = cambiarFondoTexto.value
+
+}
+
+//Sin texto superior
+
+const contenedorTextoSup = document.getElementById("contenedor-texto-superior")
+const contenedorTextoInf = document.getElementById("contenedor-texto-inferior")
+const textoSuperiorChecked = document.getElementById("texto-superior-checked")
+const textoInferiorCkecked = document.getElementById("texto-inferior-ckecked")
+
+
+const aplicarRemoverTextos = () => {
+    if (textoSuperiorChecked.checked) {
+      contenedorTextoSup.classList.add('oculto')
+    } else {
+      contenedorTextoSup.classList.remove('oculto')
+    }
+  
+    if (textoInferiorCkecked.checked) {
+        contenedorTextoInf.classList.add('oculto')
+    } else {
+        contenedorTextoInf.classList.remove('oculto')
+    }
+}
+textoSuperiorChecked.addEventListener("change", aplicarRemoverTextos)
+textoInferiorCkecked.addEventListener("change", aplicarRemoverTextos)
+
+//DESCARGAR IMAGEN
+
+const imagenContainer = document.getElementById("imagen-container")
+
+botonDescarga.onclick = () => {
+    domtoimage.toBlob(imagenContainer).then(function (blob) {
+      window.saveAs(blob, 'aqui-esta-su-meme.png')
+    })
+  }
