@@ -4,7 +4,7 @@ Hola! este es mi segundo proyecto de html y CSS estudiando frontend en [ADA](htt
 
 El proyecto se centra en el maquetado de la página y su estilado, agregando JavaScipt para interactuar con el usuario.
 
-Vas a poder armar tu propio meme y descargarlo a tu pc! 💃
+Vas a poder armar tu propio meme y descargarlo a tu dispositivo! 💃
 
 Para ver mi proyecto, por favor ingrese [aquí](https://sofisantoro.github.io/Generador-de-memes/).
 
