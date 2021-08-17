@@ -5,9 +5,10 @@ const barraLateralTexto = document.getElementById("panelTexto")  //id del <aside
 
 
 const botonDeAperturaBarraImagen = document.getElementById("botonImagen")  //id del <button> imagen
-const botonDeAperturaBarraTexto = document.getElementById("botonTexto")   //id del <button> texto
-
-const botonDeCierreImagen = document.getElementById("botonMostrarOcultar") //id del boton cerrar panel
+const botonDeAperturaBarraTexto = document.getElementById("botonTexto")  //id del <button> texto
+  
+const botonPanelTexto = document.getElementById("botonMostrarOcultarPanelTexto") // id del boton cerrar panel texto
+const botonDeCierreImagen = document.getElementById("botonMostrarOcultar") //id del boton cerrar panel imagen
 
 
 const mostrarImagenMeme = document.getElementById("imagenDeMeme") //id de la imagen que se ingresa
@@ -29,6 +30,7 @@ const botonDescarga = document.getElementById("descargar-meme")
 
 //PANELES//
 
+
 const ocultarPanel = () => {
     barraLateralImagen.style.display = "none"
     barraLateralTexto.style.display = "none"
@@ -43,10 +45,10 @@ const mostrarPanel = () => {
 botonDeAperturaBarraImagen.onclick = mostrarPanel
 
 
-// const ocultarPanelTexto = () => {
-//     barraLateralTexto.style.display = "none"
-// }
-// botonDeCierreImagen.onclick = ocultarPanelTexto
+const ocultarPanelTexto = () => {
+    barraLateralTexto.style.display = "none"
+}
+botonPanelTexto.onclick = ocultarPanelTexto
 
 const mostrarPanelTexto = () => {
     barraLateralTexto.style.display = "block"
@@ -78,6 +80,7 @@ const modoOscuro = () => {
     botonModoOscuro.style.display = "none"
     botonDescarga.style.background = "black"
     botonDescarga.style.color = "white"
+    botonPanelTexto.style.background = "black"
 }
 botonModoOscuro.onclick = modoOscuro
 
@@ -94,6 +97,7 @@ const modoClaro = () => {
     botonModoOscuro.style.display = "inline"
     botonDescarga.style.background = "rgb(236, 179, 72)"
     botonDescarga.style.color = "black"
+    botonPanelTexto.style.background = "palevioletred"
 }
 botonModoClaro.onclick = modoClaro
 

@@ -149,7 +149,7 @@
 
     <aside class="barra-de-texto" id="panelTexto">
 
-        <button class="boton-de-panel-lateral" id="botonMostrarOcultar">
+        <button class="boton-de-panel-lateral" id="botonMostrarOcultarPanelTexto">
             <i class="fas fa-times"></i>
         </button>
 
@@ -157,17 +157,17 @@
             <div class="seccion-superior">
                 <h3>SUPERIOR</h3>
                 <textarea name="superior" placeholder="TOP TEXT" class="input-de-panel-lateral" id="inputTextoSuperior"></textarea>
-                <input type="checkbox" name="confirmar-texto-superior" value="sin-texto" id="texto-superior-checked"/> Sin texto superior
+                <label><input type="checkbox" name="confirmar-texto-superior" value="sin-texto" id="texto-superior-checked"/> Sin texto superior</label>
             </div>
 
             <div class="seccion-inferior">
                 <h3>INFERIOR</h3>
                 <textarea name="inferior" placeholder="BOTTOM TEXT" class="input-de-panel-lateral" id="inputTextoIferior"></textarea>
-                <input type="checkbox" name="confirmar-texto-inferior" value="sin-texto" id="texto-inferior-ckecked"/> Sin texto inferior
+                <label><input type="checkbox" name="confirmar-texto-inferior" value="sin-texto" id="texto-inferior-ckecked"/> Sin texto inferior</label>
             </div>
 
             <div class="fuente">
-                <select id="selector-de-fuente">
+                <select class="select-fuente" id="selector-de-fuente">
                     <option value="Patua One" style="font-family: 'Patua One', cursive">Patua One</option>
                     <option value="Arial" style="font-family: Arial, Helvetica, sans-serif">Arial</option>
                     <option value="Arial Black" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Arial Black</option>
@@ -178,20 +178,22 @@
                     <option value="Verdana" style="font-family: Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
                 </select>
 
-                <label>
-                <input type="number" name="tamaño-de-fuente" min="10" max="40" id="tamanio-de-fuente"/>
-                </label>
+                <div class="alineacion-y-tamanio">
+                    <label>
+                        <input type="number" name="tamaño-de-fuente" min="10" max="40" class="tamanio-de-fuente" id="tamanio-de-fuente"/>
+                    </label>
 
-                <div class="alineacion">
-                    <button class="boton-de-alineacion" id="boton-alineacion-izq">
-                        <i class="fas fa-align-left"></i>
-                    </button>
-                    <button class="boton-de-alineacion" id="boton-alineacion-centro">
-                        <i class="fas fa-align-center"></i>
-                    </button>
-                    <button class="boton-de-alineacion" id="boton-alineacion-derecha">
-                        <i class="fas fa-align-right"></i>
-                    </button>
+                    <div class="alineacion">
+                        <button class="boton-de-alineacion" id="boton-alineacion-izq">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button class="boton-de-alineacion" id="boton-alineacion-centro">
+                            <i class="fas fa-align-center"></i>
+                        </button>
+                        <button class="boton-de-alineacion" id="boton-alineacion-derecha">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -202,10 +204,13 @@
                 </label>
 
                 <h3>FONDO</h3>
+                <label>
+                    <input type="color"class="panel-de-control-fondo" id="blend-de-color-fondo" value="#FFFFFF"/>
+                </label>
 
-                <input type="color"class="panel-de-control-fondo" id="blend-de-color-fondo" value="#FFFFFF"/>
-                
-                <input type="checkbox" name="confirmar-fondo-transparente" value="fondo-transparente"/> Fondo transparente
+                <label>
+                    <input type="checkbox" name="confirmar-fondo-transparente" value="fondo-transparente"/> Fondo transparente
+                </label>
             </div>
 
             <div class="contorno">
@@ -219,7 +224,9 @@
 
             <div class="espaciado">
                 <h3>ESPACIADO</h3>
-                <input type="number" name="tamaño-de-fuente" min="10" max="40"/>
+                <label>
+                    <input type="number" name="tamaño-de-fuente" min="10" max="40"/>
+                </label>
             </div>
 
             <div class="interlineado">

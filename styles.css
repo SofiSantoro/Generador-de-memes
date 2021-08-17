@@ -203,3 +203,38 @@ p{
 .oculto {
     display: none;
 }
+
+.fuente{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-fuente{
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 15px;
+}
+.tamanio-de-fuente{
+    margin-bottom: 15px;
+    height: 20px;
+}
+
+.alineacion-y-tamanio{
+    display: flex;
+    margin: 15px 0;
+}
+
+.alineacion{
+    margin: 0 10px;
+    height: 20px;
+}
+
+.color-fondo{
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-fondo-transparente{
+    display: flex;
+}
