@@ -7,6 +7,7 @@
     <title>EDITOR DE MEMES</title>
     <link href="styles.css"rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/9a4745d493.js" crossorigin="anonymous"></script>
+    <!-- No necesitas repetir estos dos links! una sola vez alcanza!!! -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
@@ -32,6 +33,7 @@
     <header id="header">
         <h1>Generador de memes</h1>
         <div class="botones-para-modificar-imagen">
+            <!-- los ids siempre se separan con-guiones. camelCase es para javascript -->
             <button class="botones-header" id="botonImagen">
                 <i class="fas fa-file-image"></i>
                 Imágen
@@ -57,7 +59,7 @@
                <div class="contenedor-texto-superior" id="contenedor-texto-superior">
                     <p id="respuesta-input-superior">TOP TEXT</p>
                 </div>
-
+                <!-- falta un alt aqui, como puede saber el lector de pantalla que es lo que hace esta imagen? -->
                 <img src="" class="imagen-de-meme" id="imagenDeMeme"/>
 
                 <div class="contenedor-texto-inferior" id="contenedor-texto-inferior">
@@ -80,13 +82,17 @@
             <h2>IMAGEN</h2>
             <div class="seccion-url">
                 <h3>URL</h3>
+                <!-- no hay ningun elemento que tenga "url" como id, asi que este label no hace nada -->
                 <label for="url">
+                    <!-- no dejes un value por defecto en inputs de texto, usa placeholder -->
                 <input type="text" value="imagenURL" class="input-de-panel-lateral" id="inputImagen"/>
                 </label>
             </div>
             <div class="seccion-fondo">
+                <!-- esto es un label, no un titulo -->
                 <h3>FONDO</h3>
                 <div class="opciones-seccion-fondo">
+                    <!-- falta un aria label en el input y el select -->
                     <input type="color"class="panel-de-control-fondo" id="blend-de-color-img" value="#FFFFFF"/>
                     <select class="panel-de-control-fondo editor-select-barra-lateral" id="selector-de-imagen">
                         <option value="unset">Ninguno</option>
@@ -102,6 +108,11 @@
             <div class="seccion-filtros">
                 <h3>FILTROS</h3>
                 <div class="slider-panel-lateral">
+                    <!-- el for del label debe coincidir con el id del elemento -->
+
+                    <!-- estos valores estan mal, no necesito un step de 0.1 en cada elemento, ni que 
+                    todos comiencen en 0 y terminen en 10. afecta muy negativamente la usabilidad de tu web
+                    revisá en las consignas, alli estan los valores por defecto -->
                     <label for="slider-brillo">BRILLO</label>
                     <input type="range" id="sliderbrillo" min="0" max="10" step="0.1"/>
                 </div>
@@ -148,7 +159,7 @@
 
 
     <aside class="barra-de-texto" id="panelTexto">
-
+<!-- falta un aria label aca, como sabe el lector de pantalla que hace este boton? -->
         <button class="boton-de-panel-lateral" id="botonMostrarOcultarPanelTexto">
             <i class="fas fa-times"></i>
         </button>
@@ -179,11 +190,13 @@
                 </select>
 
                 <div class="alineacion-y-tamanio">
+                    <!-- este label no hace nada -->
                     <label>
                         <input type="number" name="tamaño-de-fuente" min="10" max="40" class="tamanio-de-fuente" id="tamanio-de-fuente"/>
                     </label>
 
                     <div class="alineacion">
+                        <!-- aqui faltan aria-labels -->
                         <button class="boton-de-alineacion" id="boton-alineacion-izq">
                             <i class="fas fa-align-left"></i>
                         </button>

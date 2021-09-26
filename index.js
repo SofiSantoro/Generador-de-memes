@@ -67,6 +67,12 @@ inputImagen.oninput = () => {
 
 
 //MODO OSCURO//
+// Esta manera de implementar el modo oscuro / claro es correcta, pero creo que no es escalable. 
+// Es decir, a futuro, si tu web crece, se le agregan secciones, etc, va a ser imposible
+// seguir agregando cosas a esta funcion. 
+// Una alternativa mas escalable es la que mencioné en clase: darle una clase al body cuando 
+// se agrega modo-oscuro o modo-claro, y en el CSS darle estilos distintos a los descendientes 
+// Si te genera dudas como hacerlo no dejes de escribirme. 
 
 const modoOscuro = () => {
     color.style.background = "black"
@@ -136,7 +142,8 @@ const botonReestablecerFiltros = document.getElementById("reestablecer-filtros")
 
 
 const actualizarFiltros = () => {
-
+// Algunos de estos elementos deben llevar la palabra "px" al final, algunos "deg", algunos "%". 
+// Repasá cada uno para poder escribir bien esta orden, si no no te va a funcionar
   mostrarImagenMeme.style.filter = "brightness(" + actualizarBrillo.value + ")" ; "grayscale(" + actualizarEscalaDeGrises.value + ")" ; "opacity(" + actualizarOpacidad.value + ")" ; "contrast(" + actualizarContraste.value + ")" ; "blur(" + actualizarDesenfoque.value + ")" ; "grayscale(" + actualizarEscalaDeGrises.value + ")" ; "sepia(" + actualizarSepia.value + ")" ; "hue-rotate(" + actualizarHue.value + ")" ; "saturate(" + actualizarSaturado.value + ")" ; "invert(" + actualizarNegativo.value + ")"
   
 }
@@ -192,6 +199,10 @@ const resultadoTamanio = document.getElementById("tamanio-de-fuente")
 const cambiarFondoTexto = document.getElementById("blend-de-color-fondo")
 
 const actualizarFuente = (event) => {
+    // si aprovechas bien tu value, esta funcion puede ser mucho mas sencilla
+    // const actualizarFuente = (event) => {
+    //     resultadoInputSuperior.style.fontFamily = event.target.value
+    // }
     if(event.target.value === "Arial"){
         resultadoInputSuperior.style.fontFamily = "Arial" 
         resultadoInputInferior.style.fontFamily = "Arial"  
