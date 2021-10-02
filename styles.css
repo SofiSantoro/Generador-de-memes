@@ -1,4 +1,5 @@
 html, body{
+    /* innecesario */
     width: 100%;
 }
 
@@ -15,7 +16,7 @@ header{
     justify-content: center;
     align-items: center;
 }
-
+/* deja espacio entre el selector y la llave */
 h1{
     font-family: 'Bungee Shade', cursive;
     font-size: 65px;
@@ -50,6 +51,7 @@ h1{
     background-color: rgb(236, 206, 149);
 }
 
+/* por que no usar la clase oculto? */
 .boton-claro{
     display: none;
 }
@@ -94,6 +96,9 @@ main{
 
 }
 
+/* si tienen el mismo estilo, deberian tener la misma clase
+darles un width de 1000px garantiza que esto no va a ser responsive y que se va a ver mal
+en cualquier pantalla pequeña */
 .contenedor-texto-superior,
 .contenedor-texto-inferior{
     width: 1000px;
@@ -123,12 +128,13 @@ p{
     position: fixed;
     top: 0;
     right: 0;
+    /* innecesario */
     overflow: auto;
     background-color: palevioletred;
     font-family: 'Patua One', cursive;
     display: none;
 }
-
+/* si tiene el mismo estilo que .barra-lateral-imagen, deberian compartir clase */
 .barra-de-texto{
     width: 250px;
     height: 100%;
